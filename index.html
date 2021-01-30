@@ -65,7 +65,18 @@
     async function getFriendship() {
     }
 
+    // ตำสั่ง send message เป็น await
     async function sendMsg() {
+      if( liff.getContext().type !== "none" ){
+        await liff.setMessages([
+          {
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])  
+        alert( "Message send" )
+      } 
     }
 
     function getContext() {
@@ -110,6 +121,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
+
       // getFriendship()
       // createUniversalLink()
     }
