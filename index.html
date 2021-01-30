@@ -54,6 +54,8 @@
     }
 
     function closed() {
+      // close liff from line chat
+      liff.closeWindow()
     }
 
     // เปิด qr code แล้วอ่านค่า qr เพื่อส่งกลับมา
@@ -78,7 +80,7 @@
       const friend = await liff.getFriendship()
       document.getElementById('friendship').append( friend.friendFlag )
       if( !friend.friendFlag ){
-        if( confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อนจะเพิ่มเลยไหม?")){
+        if( confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อนจะเพิ่มเลยไหม?") ){
           window.location = "https://line.me/R/ti/p/@178yfyoa"
         }
       }
