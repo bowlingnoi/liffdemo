@@ -47,7 +47,14 @@
     function createUniversalLink() {
     }
 
+    // share target picker : ต้องเปิด toggle ที่ line console
     async function shareMsg() {
+      await liff.shareTargetPicker([
+        {
+          "type": "text",
+          "text": "This message was sent by ShareTargetPicker"
+        }
+      ])
     }
 
     function logOut() {
