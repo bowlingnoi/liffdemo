@@ -72,6 +72,7 @@
 
     async function getFriendship() {
       // getfriendship return boolean
+
       const friend = await liff.getFriendship()
       document.getElementById('friendship').append( friend.friendFlag)
       if( !firend.firendFlag){
@@ -83,6 +84,7 @@
 
     // ตำสั่ง send message เป็น await
     async function sendMsg() {
+      alert( 'sendMsg' )
       if( liff.getContext().type != "none" ){
         // can add bubble max 5 bubble
         await liff.setMessages([
@@ -126,6 +128,7 @@
       document.getElementById("accessToken").append( liff.getAccessToken() )
       // show in browser or mobile
       document.getElementById("isInClient").append( liff.isInClient() )
+      
       if( liff.isInClient() ){
         document.getElementById( 'btnLogOut' ).style.display = "none"
       } else {
@@ -144,6 +147,7 @@
       getFriendship()
       // createUniversalLink()
     }
+    
     main()
   </script>
 </body>
