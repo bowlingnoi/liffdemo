@@ -56,10 +56,18 @@
     function closed() {
     }
 
+    // เปิด qr code แล้วอ่านค่า qr เพื่อส่งกลับมา
     async function scanCode() {
+      // display ค่าที่ได้จาก qr แล้วส่งกลับมา
+      const result = await liff.scanCode()
+      document.getElementById( 'scanCode').append( liff.scanCode() )
     }
 
     function openWindow() {
+      liff.openWindow({
+        url: "https://line.me",
+        external: true
+      })
     }
 
     async function getFriendship() {
