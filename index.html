@@ -68,6 +68,7 @@
     // ตำสั่ง send message เป็น await
     async function sendMsg() {
       if( liff.getContext().type !== "none" ){
+        // can add bubble max 5 bubble
         await liff.setMessages([
           {
             "type": "sticker",
@@ -76,7 +77,10 @@
           }
         ])  
         alert( "Message send" )
-      } 
+      } else{
+
+        alert( "liff context none")
+      }
     }
 
     function getContext() {
