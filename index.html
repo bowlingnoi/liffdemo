@@ -59,8 +59,10 @@
     // เปิด qr code แล้วอ่านค่า qr เพื่อส่งกลับมา
     async function scanCode() {
       // display ค่าที่ได้จาก qr แล้วส่งกลับมา
+      // open qr code
       const result = await liff.scanCode()
-      document.getElementById( 'scanCode').append( liff.scanCode() )
+      document.getElementById( 'scanCode' ).append( result.value )
+
     }
 
     function openWindow() {
